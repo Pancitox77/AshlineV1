@@ -1,5 +1,16 @@
 [gd_scene format=3 uid="uid://d2vws7rc6ojob"]
 
+[ext_resource type="PackedScene" uid="uid://cncf834sn6iwf" path="res://scenes/characters/player/player.tscn" id="1_ud7cw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ea4mf"]
+
+[sub_resource type="Sky" id="Sky_ud7cw"]
+sky_material = SubResource("ProceduralSkyMaterial_ea4mf")
+
+[sub_resource type="Environment" id="Environment_6gn2o"]
+background_mode = 2
+sky = SubResource("Sky_ud7cw")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6jmc"]
 albedo_color = Color(0.28607237, 0.28607237, 0.28607237, 1)
 
@@ -19,6 +30,12 @@ size = Vector3(1.5, 0.4, 1.5)
 
 [node name="SimpleMap" type="Node3D" unique_id=1419838989]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=751239260]
+environment = SubResource("Environment_6gn2o")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=546304531]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 7, 0)
+
 [node name="Floor" type="StaticBody3D" parent="." unique_id=694496700]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1003717185]
@@ -35,3 +52,6 @@ mesh = SubResource("BoxMesh_s6jmc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1" unique_id=864263742]
 shape = SubResource("BoxShape3D_s6jmc")
+
+[node name="Player" parent="." unique_id=2057622094 instance=ExtResource("1_ud7cw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3892014, 0)

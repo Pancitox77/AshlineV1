@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cncf834sn6iwf"]
 
 [ext_resource type="Script" uid="uid://cb20ce886id13" path="res://scenes/characters/player/player.gd" id="1_7uws0"]
+[ext_resource type="Script" uid="uid://25v3t4sss56w" path="res://scenes/characters/player/camera_pivot.gd" id="2_t61fv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6gn2o"]
+radius = 0.35
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s6jmc"]
+radius = 0.35
+height = 1.8
 
 [node name="Player" type="CharacterBody3D" unique_id=2057622094]
 script = ExtResource("1_7uws0")
@@ -14,3 +19,12 @@ mesh = SubResource("CapsuleMesh_6gn2o")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=230018457]
 shape = SubResource("CapsuleShape3D_s6jmc")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1160664268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+script = ExtResource("2_t61fv")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=439867233]
+fov = 65.0
+near = 0.1
+far = 500.0
