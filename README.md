@@ -14,4 +14,3 @@ El proyecto nace como práctica paralela de desarrollo en Godot y modelado en Bl
 | Cámara        | Primera persona                                                         |
 | Assets        | Blender                                                                 | 
 | Tren          | Diésel-eléctrico, estilo carga americana (locomotora robusta y angular) |
-

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d2vws7rc6ojob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6jmc"]
+albedo_color = Color(0.28607237, 0.28607237, 0.28607237, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6gn2o"]
+material = SubResource("StandardMaterial3D_s6jmc")
+size = Vector3(20, 0.25, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gn2o"]
+size = Vector3(20, 0.25, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s6jmc"]
+material = SubResource("StandardMaterial3D_s6jmc")
+size = Vector3(1.5, 0.4, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6jmc"]
+size = Vector3(1.5, 0.4, 1.5)
+
+[node name="SimpleMap" type="Node3D" unique_id=1419838989]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=694496700]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1003717185]
+mesh = SubResource("BoxMesh_6gn2o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1749035493]
+shape = SubResource("BoxShape3D_6gn2o")
+
+[node name="Obstacle1" type="StaticBody3D" parent="." unique_id=1144837323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84457, 0.33261812, -6.7112346)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle1" unique_id=1369709230]
+mesh = SubResource("BoxMesh_s6jmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1" unique_id=864263742]
+shape = SubResource("BoxShape3D_s6jmc")
