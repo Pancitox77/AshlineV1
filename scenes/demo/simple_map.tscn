@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d2vws7rc6ojob"]
 
+[ext_resource type="Script" uid="uid://ctkjuxcwttgjv" path="res://scenes/demo/simple_map.gd" id="1_osf0g"]
 [ext_resource type="PackedScene" uid="uid://cncf834sn6iwf" path="res://scenes/characters/player/player.tscn" id="1_ud7cw"]
+[ext_resource type="PackedScene" uid="uid://8ewvk1551kqo" path="res://scenes/maps/main_map/train/door/door.tscn" id="3_7hw6b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ea4mf"]
 
@@ -29,6 +31,7 @@ size = Vector3(1.5, 0.4, 1.5)
 size = Vector3(1.5, 0.4, 1.5)
 
 [node name="SimpleMap" type="Node3D" unique_id=1419838989]
+script = ExtResource("1_osf0g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=751239260]
 environment = SubResource("Environment_6gn2o")
@@ -55,3 +58,6 @@ shape = SubResource("BoxShape3D_s6jmc")
 
 [node name="Player" parent="." unique_id=2057622094 instance=ExtResource("1_ud7cw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3892014, 0)
+
+[node name="Door" parent="." unique_id=1035628743 instance=ExtResource("3_7hw6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1757464, -5.351952)
