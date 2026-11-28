@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb20ce886id13" path="res://scenes/characters/player/player.gd" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://25v3t4sss56w" path="res://scenes/characters/player/camera_pivot.gd" id="2_t61fv"]
+[ext_resource type="Script" uid="uid://xc5rk3fcsw8y" path="res://scenes/characters/player/ray_cast_3d.gd" id="3_686vu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6gn2o"]
 radius = 0.35
@@ -28,3 +29,10 @@ script = ExtResource("2_t61fv")
 fov = 65.0
 near = 0.1
 far = 500.0
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=710094082]
+target_position = Vector3(0, 0, 2)
+collision_mask = 4
+debug_shape_custom_color = Color(0.8361896, 0.62225944, 0.3081006, 1)
+debug_shape_thickness = 4
+script = ExtResource("3_686vu")
